@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StrangerStreamsDemo</string>
+    <string name="title_activity_main">Stranger Streams Demo</string>
+    <string name="hint_search_text">Search</string>
+</resources>
