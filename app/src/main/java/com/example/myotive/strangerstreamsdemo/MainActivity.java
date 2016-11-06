@@ -1,12 +1,14 @@
 package com.example.myotive.strangerstreamsdemo;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.EditText;
 
 import com.example.myotive.strangerstreamsdemo.adapters.MonsterAdapter;
@@ -49,17 +51,21 @@ public class MainActivity extends AppCompatActivity {
 
     private CompositeSubscription subscriptions = new CompositeSubscription();
 
+    private ActionBarDrawerToggle mDrawerToggle;
+
+    private DrawerLayout mDrawerLayout;
     private EditText searchView;
     private RecyclerView searchResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        
         realm = Realm.getDefaultInstance();
+
+        setContentView(R.layout.activity_main);
+
+        SetupToolbar();
 
         VerifyMonstersDatabase();
         BindUI();
@@ -83,6 +89,46 @@ public class MainActivity extends AppCompatActivity {
             realm.close();
         }
     }
+
+
+    private void SetupToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,                  /* host Activity */
+                mDrawerLayout,         /* DrawerLayout object */
+                toolbar,  /* nav drawer icon to replace 'Up' caret */
+                R.string.navigation_open,  /* "open drawer" description */
+                R.string.navigation_close  /* "close drawer" description */
+        ) {
+
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                getSupportActionBar().setTitle("Stranger Streams");
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                getSupportActionBar().setTitle("");
+            }
+        };
+
+
+        mDrawerLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                mDrawerToggle.syncState();
+            }
+        });
+
+        mDrawerLayout.addDrawerListener(mDrawerToggle);
+    }
+
 
     private void BindUI(){
 

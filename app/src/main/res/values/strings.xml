@@ -2,4 +2,6 @@
     <string name="app_name">StrangerStreamsDemo</string>
     <string name="title_activity_main">Stranger Streams Demo</string>
     <string name="hint_search_text">Search</string>
+    <string name="navigation_open">Open</string>
+    <string name="navigation_close">Close</string>
 </resources>
