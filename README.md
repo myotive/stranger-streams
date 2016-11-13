@@ -29,6 +29,7 @@ To build, install and run a debug version, run this from the root of the project
 * https://realm.io/news/intro-to-rxjava/
 
 ### BLOGS
+* http://blog.kaush.co/2015/03/02/rx-is-coming/
 * http://blog.feedpresso.com/2016/01/25/why-you-should-use-rxjava-in-android-a-short-introduction-to-rxjava.html
 * https://upday.github.io/blog/reactive_mindset_burgers/
 * https://github.com/florina-muntenescu/ReactiveBurgers
@@ -94,9 +95,14 @@ To build, install and run a debug version, run this from the root of the project
 
 #### Videos
 * [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
+* [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
+* [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
 * https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents
 
 #### Podcasts
 * [Fragmented 003 - The RxJava show with Dan Lew (Part 1)](http://fragmentedpodcast.com/episodes/3/)
 * [Fragmented 004 - The RxJava show with Dan Lew (Part 2)](http://fragmentedpodcast.com/episodes/4/)
 * [Fragmented 061 - The state of event bus(es) today](http://fragmentedpodcast.com/episodes/061/)
+
+#### Tools
+* [RetroLambda](https://github.com/evant/gradle-retrolambda)
