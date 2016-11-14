@@ -63,7 +63,8 @@ To build, install and run a debug version, run this from the root of the project
 * https://praveer09.github.io/technology/2016/02/21/rxjava-part-2-creating-an-observable/
 * https://medium.com/math-camp-engineering/concurrency-categorization-eea7b871e0ac#.mdr69wq1i
 * http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/
-* http://randomdotnext.com/retrofit-rxjava/
+* http://randomdotnext.com/retrofit-rxjava/
+* https://medium.com/@mplacona/building-a-beautifully-smart-form-in-android-using-rxjava-92c4d27bb060#.xtbpvktt0
 
 #### Dan Lew's Grokking RxJava Series
 * http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
