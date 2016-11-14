@@ -25,6 +25,8 @@ To build, install and run a debug version, run this from the root of the project
 # References
 
 * http://reactivex.io/
+* https://github.com/ReactiveX/RxAndroid
+* [RxAndroid Extensions](https://github.com/ReactiveX/RxAndroid/wiki)
 * http://www.reactivemanifesto.org/
 * https://realm.io/news/intro-to-rxjava/
 
