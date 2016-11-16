@@ -97,6 +97,7 @@ To build, install and run a debug version, run this from the root of the project
 * https://github.com/kaushikgopal/RxJava-Android-Samples
 
 #### Videos
+* [Learning Rx by Example](https://vimeo.com/190922794)
 * [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
 * [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
 * [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
