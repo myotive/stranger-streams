@@ -28,7 +28,6 @@ To build, install and run a debug version, run this from the root of the project
 * https://github.com/ReactiveX/RxAndroid
 * [RxAndroid Extensions](https://github.com/ReactiveX/RxAndroid/wiki)
 * http://www.reactivemanifesto.org/
-* https://realm.io/news/intro-to-rxjava/
 
 ### BLOGS
 * http://blog.kaush.co/2015/03/02/rx-is-coming/
@@ -37,8 +36,6 @@ To build, install and run a debug version, run this from the root of the project
 * https://github.com/florina-muntenescu/ReactiveBurgers
 * http://www.pacoworks.com/2016/05/26/method-references-funcn-and-actionn/
 * http://www.thedroidsonroids.com/blog/android/rxjava-production-line/
-* [Jake Wharton: Reactive Extensions, RxAndroid, Optimization](https://www.youtube.com/watch?v=qGM04LcSCmo)
-* [Droidcon SF - Common RxJava Mistakes](https://www.youtube.com/watch?v=QdmkXL7XikQ)
 * https://www.reddit.com/r/androiddev/comments/5546zw/looking_ahead_to_rxjava_2_droidcon_nyc_2016/
 * https://realm.io/news/donn-felker-reactive-android-ui-programming-with-rxbinding/
 * https://medium.com/tangoagency/rxjava-meets-android-data-binding-4ca5e1144107#.bwfymgxg0
@@ -97,12 +94,15 @@ To build, install and run a debug version, run this from the root of the project
 * https://github.com/kaushikgopal/RxJava-Android-Samples
 
 #### Videos
-* [Learning Rx by Example](https://vimeo.com/190922794)
+* [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
+* [Jake Wharton: Reactive Extensions, RxAndroid, Optimization](https://www.youtube.com/watch?v=qGM04LcSCmo)
 * [Jake Wharton - Exploring RxJava2](https://realm.io/news/gotocph-jake-wharton-exploring-rxjava2-android/)
+* [Droidcon SF - Common RxJava Mistakes](https://www.youtube.com/watch?v=QdmkXL7XikQ)
+* [Learning Rx by Example](https://vimeo.com/190922794)
 * [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
 * [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
 * [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
-* https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents
+* [Pluralsight series on RxJava](https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents)
 
 #### Podcasts
 * [Fragmented 003 - The RxJava show with Dan Lew (Part 1)](http://fragmentedpodcast.com/episodes/3/)
