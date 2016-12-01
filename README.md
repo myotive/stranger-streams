@@ -29,7 +29,7 @@ To build, install and run a debug version, run this from the root of the project
 * [RxAndroid Extensions](https://github.com/ReactiveX/RxAndroid/wiki)
 * http://www.reactivemanifesto.org/
 
-### BLOGS
+#### BLOGS
 * http://blog.kaush.co/2015/03/02/rx-is-coming/
 * http://blog.feedpresso.com/2016/01/25/why-you-should-use-rxjava-in-android-a-short-introduction-to-rxjava.html
 * https://upday.github.io/blog/reactive_mindset_burgers/
@@ -65,6 +65,17 @@ To build, install and run a debug version, run this from the root of the project
 * http://randomdotnext.com/retrofit-rxjava/
 * https://medium.com/@mplacona/building-a-beautifully-smart-form-in-android-using-rxjava-92c4d27bb060#.xtbpvktt0
 
+#### Videos
+* [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
+* [Jake Wharton: Reactive Extensions, RxAndroid, Optimization](https://www.youtube.com/watch?v=qGM04LcSCmo)
+* [Jake Wharton - Exploring RxJava2](https://realm.io/news/gotocph-jake-wharton-exploring-rxjava2-android/)
+* [Droidcon SF - Common RxJava Mistakes](https://www.youtube.com/watch?v=QdmkXL7XikQ)
+* [Learning Rx by Example](https://vimeo.com/190922794)
+* [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
+* [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
+* [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
+* [Pluralsight series on RxJava](https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents)
+
 #### Dan Lew's Grokking RxJava Series
 * http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
 * http://blog.danlew.net/2014/09/22/grokking-rxjava-part-2/
@@ -76,10 +87,8 @@ To build, install and run a debug version, run this from the root of the project
 * http://reactivex.io/documentation/operators.html
 * https://github.com/ReactiveX/RxJava/wiki/Filtering-Observables
 
-
 #### Backpressure
 * http://ferd.ca/queues-don-t-fix-overload.html
-
 
 #### Testing
 * https://fedepaol.github.io/blog/2015/09/13/testing-rxjava-observables-subscriptions/
@@ -92,17 +101,6 @@ To build, install and run a debug version, run this from the root of the project
 
 #### Code
 * https://github.com/kaushikgopal/RxJava-Android-Samples
-
-#### Videos
-* [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
-* [Jake Wharton: Reactive Extensions, RxAndroid, Optimization](https://www.youtube.com/watch?v=qGM04LcSCmo)
-* [Jake Wharton - Exploring RxJava2](https://realm.io/news/gotocph-jake-wharton-exploring-rxjava2-android/)
-* [Droidcon SF - Common RxJava Mistakes](https://www.youtube.com/watch?v=QdmkXL7XikQ)
-* [Learning Rx by Example](https://vimeo.com/190922794)
-* [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
-* [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
-* [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
-* [Pluralsight series on RxJava](https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents)
 
 #### Podcasts
 * [Fragmented 003 - The RxJava show with Dan Lew (Part 1)](http://fragmentedpodcast.com/episodes/3/)
