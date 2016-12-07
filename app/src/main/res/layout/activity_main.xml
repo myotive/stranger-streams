@@ -33,7 +33,7 @@
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nvView"
+        android:id="@+id/navigationView"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/navigationdrawer_main"
         android:layout_width="wrap_content"

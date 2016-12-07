@@ -2,12 +2,15 @@ package com.example.myotive.strangerstreamsdemo;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -46,50 +49,19 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private Realm realm;
-    private MonsterAdapter adapter;
-
-    private CompositeSubscription subscriptions = new CompositeSubscription();
-
     private ActionBarDrawerToggle mDrawerToggle;
 
+    private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
-    private EditText searchView;
-    private RecyclerView searchResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        realm = Realm.getDefaultInstance();
-
         setContentView(R.layout.activity_main);
 
         SetupToolbar();
-
-        VerifyMonstersDatabase();
-        BindUI();
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        SetupSubscriptions();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if(subscriptions != null){
-            subscriptions.unsubscribe();
-        }
-
-        if(realm != null && !realm.isClosed()){
-            realm.close();
-        }
-    }
-
 
     private void SetupToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -127,155 +99,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mDrawerLayout.addDrawerListener(mDrawerToggle);
-    }
 
-
-    private void BindUI(){
-
-        adapter = new MonsterAdapter(null);
-
-        searchResult = (RecyclerView)findViewById(R.id.rv_results);
-        searchResult.setLayoutManager(new LinearLayoutManager(this));
-        searchResult.setAdapter(adapter);
-
-        searchView = (EditText) findViewById(R.id.txt_search);
-    }
-
-
-    private void SetupSubscriptions() {
-        Subscription searchViewSubscription
-                = RxTextView
-                .textChanges(searchView)
-                .debounce(1 , TimeUnit.SECONDS)
-                .filter(new Func1<CharSequence, Boolean>() {
-                    @Override
-                    public Boolean call(CharSequence charSequence) {
-                        return charSequence.length() != 0;
-                    }
-                })
-                .observeOn(AndroidSchedulers.mainThread())
-                .map(new Func1<CharSequence, RealmResults<Monster>>() {
-                    @Override
-                    public RealmResults<Monster> call(CharSequence charSequence) {
-
-                        Realm localInstance = Realm.getDefaultInstance();
-
-                        RealmResults<Monster> query = localInstance.where(Monster.class)
-                                .contains("name", charSequence.toString())
-                                .findAll();
-
-                        localInstance.close();
-
-                        return query;
-                    }
-                })
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<RealmResults<Monster>>() {
-                    @Override
-                    public void onCompleted() {
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        Timber.e(e);
-                    }
-
-                    @Override
-                    public void onNext(RealmResults<Monster> monsters) {
-                        adapter.setResults(monsters);
-                        adapter.notifyDataSetChanged();
-                    }
-                });
-
-        subscriptions.add(searchViewSubscription);
-    }
-
-    private void VerifyMonstersDatabase(){
-        RealmQuery<Monster> query = realm.where(Monster.class);
-        long monsterCount = query.count();
-
-        if(monsterCount == 0) {
-
-            final ProgressDialog progress = new ProgressDialog(this);
-            progress.setTitle("Loading");
-            progress.setCancelable(false);
-            progress.show();
-
-            createMonsterListObservable()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .map(new Func1<Monster, Monster>() {
-                        @Override
-                        public Monster call(Monster monster) {
-
-                            realm.beginTransaction();
-                            realm.copyToRealm(monster);
-                            realm.commitTransaction();
-
-                            return monster;
-                        }
-                    })
-                    .subscribe(new Observer<Monster>() {
-                        @Override
-                        public void onCompleted() {
-                            progress.dismiss();
-                        }
-
-                        @Override
-                        public void onError(Throwable e) {
-                            Timber.e(e);
-                            progress.dismiss();
-                        }
-
-                        @Override
-                        public void onNext(Monster monster) {
-
-                        }
-                    });
-        }
-    }
-
-
-    private Observable<Monster> createMonsterListObservable(){
-
-        return Observable.defer(new Func0<Observable<Monster>>() {
+        navigationView = (NavigationView) findViewById(R.id.navigationView);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public Observable<Monster> call() {
-                Gson gson = new Gson();
-                StringBuilder buf=new StringBuilder();
-                InputStream json;
-                List<Monster> monsterList = null;
-                try {
-                    // Read monsters json file from assets into string buffer
-                    json = getAssets().open("5e-SRD-Monsters.json");
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                    BufferedReader in=
-                            new BufferedReader(new InputStreamReader(json, "UTF-8"));
-                    String str;
+                //Closing drawer on item click
+                mDrawerLayout.closeDrawers();
 
-                    while ((str=in.readLine()) != null) {
-                        buf.append(str);
-                    }
-                    in.close();
-
-                    // parse json string buffer into json array
-                    JsonParser parser = new JsonParser();
-                    JsonArray jsonArray = parser.parse(buf.toString()).getAsJsonArray();
-
-                    // remove the last element (license node)
-                    jsonArray.remove(jsonArray.size() - 1);
-
-                    Type listType = new TypeToken<List<Monster>>(){}.getType();
-                    monsterList = gson.fromJson(jsonArray, listType);
-                }
-                catch (IOException | JsonSyntaxException e) {
-                    Timber.e(e);
+                switch (item.getItemId()){
+                    case R.id.navdrawer_item_dnd:
+                        return true;
+                    case R.id.navdrawer_item_codemash:
+                        return true;
                 }
 
-                return monsterList != null  ? Observable.from(monsterList) : Observable.<Monster>empty();
+                return false;
             }
         });
     }
-
 }

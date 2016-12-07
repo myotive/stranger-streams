@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/group_feature"
         android:checkableBehavior="single">
-        <item android:id="@+id/navdrawer_item_map"
+        <item android:id="@+id/navdrawer_item_dnd"
             android:checked="true"
-            android:title="Foo"/>
+            android:title="D &amp; D Search"/>
 
     </group>
     <group android:id="@+id/group_settings"
         android:checkableBehavior="single">
-        <item android:id="@+id/navdrawer_item_settings"
-            android:title="Bar"/>
+        <item android:id="@+id/navdrawer_item_codemash"
+            android:title="Code Mash"/>
 
     </group>
 </menu>

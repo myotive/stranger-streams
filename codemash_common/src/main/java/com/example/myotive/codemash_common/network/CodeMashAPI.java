@@ -9,6 +9,7 @@ import java.util.UUID;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import rx.Observable;
 
 /**
  * Created by michaelyotive_hr on 12/3/16.
@@ -16,14 +17,14 @@ import retrofit2.http.Path;
 
 public interface CodeMashAPI {
     @GET("api/SessionsData")
-    Call<List<Session>> GetSessions();
+    Observable<List<Session>> GetSessions();
 
     @GET("api/SessionsData/{id}")
-    Call<Session> GetSessionById(@Path("id") UUID id);
+    Observable<Session> GetSessionById(@Path("id") UUID id);
 
     @GET("api/SpeakersData")
-    Call<List<Speaker>> GetSpeakers();
+    Observable<List<Speaker>> GetSpeakers();
 
     @GET("api/SpeakersData/{id}")
-    Call<Speaker> GetSpeakerById(@Path("id") UUID id);
+    Observable<Speaker> GetSpeakerById(@Path("id") UUID id);
 }
