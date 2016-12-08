@@ -27,6 +27,7 @@ public class NetworkModule {
                 .baseUrl("https://speakers.codemash.org/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io()))
                 .build();
     }
 
@@ -43,7 +44,7 @@ public class NetworkModule {
     @ApplicationScope
     HttpLoggingInterceptor provideInterceptor(){
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         return logging;
     }
