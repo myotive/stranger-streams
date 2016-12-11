@@ -64,6 +64,7 @@ To build, install and run a debug version, run this from the root of the project
 * http://blog.kaush.co/2014/12/24/implementing-an-event-bus-with-rxjava-rxbus/
 * http://randomdotnext.com/retrofit-rxjava/
 * https://medium.com/@mplacona/building-a-beautifully-smart-form-in-android-using-rxjava-92c4d27bb060#.xtbpvktt0
+* [Error handling in RxJava - Dan Lew](http://blog.danlew.net/2015/12/08/error-handling-in-rxjava/)
 
 #### Videos
 * [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
