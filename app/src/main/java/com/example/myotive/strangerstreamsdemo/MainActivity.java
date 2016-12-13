@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.example.myotive.strangerstreamsdemo.ui.CodeMashFragment;
 import com.example.myotive.strangerstreamsdemo.ui.DnDFragment;
+import com.example.myotive.strangerstreamsdemo.ui.RxJavaBasicsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -78,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 mDrawerLayout.closeDrawers();
 
                 switch (item.getItemId()){
+                    case R.id.navdrawer_item_rxjava:
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.main_content, RxJavaBasicsFragment.newInstance())
+                                .commit();
+
+                        return true;
                     case R.id.navdrawer_item_dnd:
 
                         getSupportFragmentManager()

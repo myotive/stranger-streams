@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/group_feature"
-        android:checkableBehavior="single">
-        <item android:id="@+id/navdrawer_item_dnd"
-            android:checked="true"
-            android:title="D &amp; D Search"/>
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/navdrawer_item_rxjava"
+            android:title="RxJava Basics"/>
 
     </group>
-    <group android:id="@+id/group_settings"
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
         <item android:id="@+id/navdrawer_item_codemash"
             android:title="Code Mash"/>
+
+    </group>
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/navdrawer_item_dnd"
+            android:title="D &amp; D Search"/>
 
     </group>
 </menu>

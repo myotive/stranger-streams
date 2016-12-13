@@ -8,7 +8,12 @@
     android:clickable="true"
     android:focusableInTouchMode="true">
 
-    <android.support.design.widget.CoordinatorLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<!--    <android.support.design.widget.CoordinatorLayout
         android:id="@+id/overview_coordinator_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,25 +21,26 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:theme="@style/AppTheme.AppBarOverlay">-->
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
+                app:titleTextColor="@android:color/white"
                 app:layout_scrollFlags="scroll|snap"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        </android.support.design.widget.AppBarLayout>
+<!--        </android.support.design.widget.AppBarLayout>-->
 
         <FrameLayout
             android:id="@+id/main_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </android.support.design.widget.CoordinatorLayout>
-
+    <!--</android.support.design.widget.CoordinatorLayout>-->
+    </LinearLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigationView"
         app:headerLayout="@layout/nav_header"
