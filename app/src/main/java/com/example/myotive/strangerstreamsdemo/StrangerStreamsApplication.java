@@ -1,6 +1,6 @@
 package com.example.myotive.strangerstreamsdemo;
 
-import android.app.Application;
+import com.example.myotive.codemash_common.BaseApplication;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -10,7 +10,7 @@ import timber.log.Timber;
  * Created by myotive on 10/16/2016.
  */
 
-public class StrangerStreamsApplication extends Application {
+public class StrangerStreamsApplication extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
