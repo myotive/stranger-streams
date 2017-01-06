@@ -66,7 +66,7 @@ To build, install and run a debug version, run this from the root of the project
 * https://medium.com/@mplacona/building-a-beautifully-smart-form-in-android-using-rxjava-92c4d27bb060#.xtbpvktt0
 * [Error handling in RxJava - Dan Lew](http://blog.danlew.net/2015/12/08/error-handling-in-rxjava/)
 
-#### Videos
+#### Videos - Free
 * [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
 * [Jake Wharton: Reactive Extensions, RxAndroid, Optimization](https://www.youtube.com/watch?v=qGM04LcSCmo)
 * [Jake Wharton - Exploring RxJava2](https://realm.io/news/gotocph-jake-wharton-exploring-rxjava2-android/)
@@ -75,7 +75,12 @@ To build, install and run a debug version, run this from the root of the project
 * [Playlist of YouTube Videos](https://www.youtube.com/playlist?list=PLWAnz6AE4dga8ZSEBr9kmCcqxKlBlZeOI)
 * [How to Think, in RxJava, Before Reacting](https://vimeo.com/170796165)
 * [Rx-Workshop](https://channel9.msdn.com/Series/Rx-Workshop/Rx-Workshop-Introduction)
+
+#### Videos - Mostly not-free
 * [Pluralsight series on RxJava](https://app.pluralsight.com/library/courses/reactive-programming-java-8-rxjava/table-of-contents)
+* [Caster.io - RxJava Marble Diagrams](https://caster.io/lessons/rxjava-marble-diagrams/)
+* [Caster.io - RxJava Course](https://caster.io/courses/rxjava/)
+* [Caster.io - RxJava Subjects](https://caster.io/courses/rxjava-subjects/)
 
 #### Dan Lew's Grokking RxJava Series
 * http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
@@ -87,6 +92,7 @@ To build, install and run a debug version, run this from the root of the project
 * http://rxmarbles.com/
 * http://reactivex.io/documentation/operators.html
 * https://github.com/ReactiveX/RxJava/wiki/Filtering-Observables
+* https://medium.com/@kevalpatel2106/what-should-you-know-about-rx-operators-54716a16b310#.osf4gyuu4
 
 #### Backpressure
 * http://ferd.ca/queues-don-t-fix-overload.html
