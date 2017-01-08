@@ -66,6 +66,7 @@ To build, install and run a debug version, run this from the root of the project
 * https://medium.com/@mplacona/building-a-beautifully-smart-form-in-android-using-rxjava-92c4d27bb060#.xtbpvktt0
 * [Error handling in RxJava - Dan Lew](http://blog.danlew.net/2015/12/08/error-handling-in-rxjava/)
 * [When to use Observable vs Flowable in RxJava 2](https://github.com/ReactiveX/RxJava/wiki/What's-different-in-2.0#when-to-use-observable)
+* [RxJava 2 - Next Steps for Reactive Android Programming](https://futurice.com/blog/the-next-step-for-reactive-android-programming)
 
 #### Videos - Free
 * [Christina Lee's Intro to RxJava talk](https://realm.io/news/intro-to-rxjava/)
