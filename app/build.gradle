@@ -45,6 +45,8 @@ dependencies {
     // -- Rx Java/Android
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+    // -- (Optional) Rx Java Math library
+    compile 'io.reactivex:rxjava-math:1.0.0'
 
     // -- Rx Android bindings
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'

@@ -14,6 +14,7 @@ import android.view.View;
 import com.example.myotive.strangerstreamsdemo.ui.CodeMashFragment;
 import com.example.myotive.strangerstreamsdemo.ui.DnDFragment;
 import com.example.myotive.strangerstreamsdemo.ui.RxJavaBasicsFragment;
+import com.example.myotive.strangerstreamsdemo.ui.RxJavaFormsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager()
                                 .beginTransaction()
                                 .replace(R.id.main_content, RxJavaBasicsFragment.newInstance())
+                                .commit();
+
+                        return true;
+                    case R.id.navdrawer_item_rxjava_form:
+
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.main_content, RxJavaFormsFragment.newInstance())
                                 .commit();
 
                         return true;

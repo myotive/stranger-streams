@@ -6,6 +6,11 @@
 
     </group>
     <group android:checkableBehavior="single">
+        <item android:id="@+id/navdrawer_item_rxjava_form"
+            android:title="RxJava Form Example"/>
+
+    </group>
+    <group android:checkableBehavior="single">
         <item android:id="@+id/navdrawer_item_codemash"
             android:title="Code Mash"/>
 
