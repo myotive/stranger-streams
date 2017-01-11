@@ -2,9 +2,9 @@ package com.example.myotive.strangerstreamsdemo.ui;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,21 +14,23 @@ import android.widget.Toast;
 import com.example.myotive.codemash_common.BaseApplication;
 import com.example.myotive.codemash_common.network.CodeMashAPI;
 import com.example.myotive.codemash_common.network.models.Speaker;
-import com.example.myotive.codemash_common.ui.SpeakerAdapter;
 import com.example.myotive.strangerstreamsdemo.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import rx.Observable;
 import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
-import timber.log.Timber;
 
 public class RxJavaBasicsFragment extends Fragment {
+
+    private static final String TAG = RxJavaBasicsFragment.class.getSimpleName();
 
     public static RxJavaBasicsFragment newInstance() {
         return new RxJavaBasicsFragment();
@@ -126,8 +128,8 @@ public class RxJavaBasicsFragment extends Fragment {
 
         btnNetworkCall = (Button)view.findViewById(R.id.button_network_call);
         btnNetworkCall.setOnClickListener(v -> {
-            codeMashAPI
-                    .GetSpeakers()
+
+            createSpeakerObservable()
                     .subscribe(new Subscriber<List<Speaker>>() {
                         @Override
                         public void onCompleted() {
@@ -136,14 +138,65 @@ public class RxJavaBasicsFragment extends Fragment {
 
                         @Override
                         public void onError(Throwable e) {
-                            Toast.makeText(getContext(), "ERROR: Could not make network call on main thread", Toast.LENGTH_SHORT).show();
+                            Log.e(TAG, "Error calling CodeMash api", e);
+
+                            displayError();
                         }
 
                         @Override
                         public void onNext(List<Speaker> speakers) {
-                            Toast.makeText(getContext(), "Speaker List Count: " + speakers.size(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(),
+                                    "Number of speakers" + String.valueOf(speakers.size()),
+                                    Toast.LENGTH_LONG).show();
                         }
                     });
         });
+    }
+
+    /**
+     * Create an observable that uses OkHttp3 to call the codemash api
+     * The codemash api will return a JSON response of speaker data.
+     * We can use GSON to deserialize this response into an object and emit via
+     * the observable contract.
+     * @return
+     */
+    private Observable<List<Speaker>> createSpeakerObservable(){
+        return Observable.create(subscriber -> {
+            List<Speaker> speakers = new ArrayList<>();
+
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url("https://speakers.codemash.org/api/SpeakersData")
+                    .get()
+                    .build();
+            try {
+
+                Response response = client.newCall(request).execute();
+                Gson gson = new Gson();
+
+                speakers = gson.fromJson(response.body().string(),
+                        new TypeToken<List<Speaker>>(){}.getType());
+
+            } catch (Exception e) {
+                subscriber.onError(e);
+            }
+
+            subscriber.onNext(speakers);
+            subscriber.onCompleted();
+        });
+    }
+
+    private void displayError() {
+        Handler mainThread = new Handler(getContext().getMainLooper());
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getContext(),
+                        "Error calling codemash api!!",
+                        Toast.LENGTH_LONG).show();
+            }
+        };
+
+        mainThread.post(runnable);
     }
 }
