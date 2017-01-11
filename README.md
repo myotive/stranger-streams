@@ -18,9 +18,8 @@ To build, install and run a debug version, run this from the root of the project
 ```
 
 # Screens
-```
-  todo: screenshots of sample screens
-```
+![Forms Example](https://raw.githubusercontent.com/myotive/stranger-streams/master/screenshots/forms.gif)
+![DnD Example](https://raw.githubusercontent.com/myotive/stranger-streams/master/screenshots/dndsearch.gif)
 
 # References
 
