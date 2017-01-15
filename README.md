@@ -7,7 +7,7 @@ This repository contains the sample code that accompanies my CodeMash 2017 prese
 
 [RxBinding](https://github.com/JakeWharton/RxBinding)
 
-[Todo: Link to Slides](http://www.google.com)
+[Slides](https://speakerdeck.com/myotive/stranger-streams-how-to-rxandroid)
 
 # Building
 
